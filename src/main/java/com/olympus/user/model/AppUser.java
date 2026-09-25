@@ -3,8 +3,6 @@ package com.olympus.user.model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import com.olympus.user.Enum.Gender;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

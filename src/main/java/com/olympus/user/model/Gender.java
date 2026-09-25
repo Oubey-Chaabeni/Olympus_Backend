@@ -1,4 +1,4 @@
-package com.olympus.user.Enum;
+package com.olympus.user.model;
 
 public enum  Gender {
 
