@@ -49,7 +49,7 @@ public class AppUser {
     private String phoneNumber;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "ender", nullable = false, length = 6 )
+    @Column(name = "gender", nullable = false, length = 6 )
     private Gender gender;
 
     @Column(name = "avatar_key")

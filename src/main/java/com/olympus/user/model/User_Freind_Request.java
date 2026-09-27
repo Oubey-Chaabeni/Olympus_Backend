@@ -19,22 +19,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity 
-@Table(name = "user_block_list",
-    indexes=
+@Table(
+    name = "user_friend_request",
+    indexes = 
     {
-        @Index(name = "usr_block_indx", columnList = "user_id" )
+        @Index(name = "usr_friend_request", columnList = "user_id")
     }
 )
-@Setter 
 @Getter 
+@Setter
 @NoArgsConstructor 
 @AllArgsConstructor 
 @Builder 
-public class UserBlockList {
+public class User_Freind_Request {
     
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -42,15 +44,18 @@ public class UserBlockList {
     private AppUser user;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "blocked_user_id", nullable = false)
-    private AppUser blockedUser;
+    @JoinColumn(name = "requester_id", nullable = false)
+    private AppUser requester;
 
-    @Column(name = "createdAt",nullable = false)
+    @Column (name = "createdAt", nullable=false)
     private LocalDateTime createdAt;
 
-    @PrePersist
+    @PrePersist 
     protected void onCreate()
     {
         this.createdAt = LocalDateTime.now();
     }
+
+
+    
 }
